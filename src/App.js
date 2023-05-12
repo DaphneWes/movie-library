@@ -4,6 +4,7 @@ import { MOVIE_API_URL, movieAPIOptions } from './api';
 import Search from './components/search/search';
 import DetailsMovie from './components/details/details';
 import ReviewsMovie from './components/reviews/reviews';
+import Topbar from './components/top-bar/top-bar';
 
 function App() {
 
@@ -17,22 +18,26 @@ function App() {
     const reviewsMovieFetch = fetch(`${MOVIE_API_URL}title/get-reviews?tconst=${movieID}`, movieAPIOptions);
 
     // Get information from both APIs
-    Promise.all([detailsMovieFetch,reviewsMovieFetch])
-    .then(async(response) => {
-      const detailsResponse = await response[0].json();
-      const reviewsResponse = await response[1].json();
+    Promise.all([detailsMovieFetch, reviewsMovieFetch])
+      .then(async (response) => {
+        const detailsResponse = await response[0].json();
+        const reviewsResponse = await response[1].json();
 
-      setDetailsMovie({ movie: searchData.label, ...detailsResponse});
-      setReviewsMovie({ movie: searchData.label, ...reviewsResponse});
-    })
-    .catch((err) => console.log(err));
+        setDetailsMovie({ movie: searchData.label, ...detailsResponse });
+        setReviewsMovie({ movie: searchData.label, ...reviewsResponse });
+      })
+      .catch((err) => console.log(err));
   }
 
   return (
+
     <div className='container'>
-      <Search onSearchChange={handleOnSearchChange}/>
-      {detailsMovie && <DetailsMovie data={detailsMovie}/>}
-      {reviewsMovie && <ReviewsMovie data={reviewsMovie}/>}
+      <Topbar />
+      <div className='bottom-container'>
+        <Search onSearchChange={handleOnSearchChange} />
+        {detailsMovie && <DetailsMovie data={detailsMovie} />}
+        {reviewsMovie && <ReviewsMovie data={reviewsMovie} />}
+      </div>
     </div>
   );
 }

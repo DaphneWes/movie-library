@@ -35,7 +35,7 @@ const Search = ({onSearchChange}) => {
     return (
         <AsyncPaginate
             placeholder="Search for a Movie"
-            debounceTimeout={500}
+            debounceTimeout={200}
             value={search}
             onChange={handleOnChange}
             loadOptions={loadOptions}

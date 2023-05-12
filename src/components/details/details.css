@@ -1,0 +1,33 @@
+.details-movie{
+    margin: auto 100px;
+}
+
+.movie-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 35px;
+    font-size: 50px;
+}
+.movie-poster {
+    height: 300px;
+}
+
+.top-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.row-item {
+    color: #626262;
+    border-style: solid;
+    border-width: 1px;
+    padding: 10px;
+}
+
+/* .movie-ratings {
+    font-size: 30px;
+    font-weight: 200;
+} */
