@@ -5,6 +5,7 @@ import Search from './components/search/search';
 import DetailsMovie from './components/details/details';
 import ReviewsMovie from './components/reviews/reviews';
 import Topbar from './components/top-bar/top-bar';
+import Title from './components/Title/Title';
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
     <div className='container'>
       <Topbar />
       <div className='bottom-container'>
+        {!detailsMovie && <Title />}
         <Search onSearchChange={handleOnSearchChange} />
         {detailsMovie && <DetailsMovie data={detailsMovie} />}
         {reviewsMovie && <ReviewsMovie data={reviewsMovie} />}

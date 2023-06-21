@@ -1,0 +1,41 @@
+.review-cards {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 80px 0px;
+}
+.title-reviews {
+    padding-top: 30px;
+    margin: 0px 60px;
+}
+
+hr {
+    width: 100px;
+    position:absolute;
+    color: rgb(64, 64, 248);
+}
+
+.full-review {
+    text-align: center;
+    margin: 0px 50px;
+    padding: 25px;
+    border-radius: 8px;
+    border-width: 1px;
+    box-shadow: 10px 10px 36px -4px rgba(0,0,0,0.1);
+}
+
+.name-reviewer {
+    font-size: 20px;
+    font-style: italic;
+    padding-bottom: 5px;
+}
+
+.quote-reviewer {
+    font-size: 13px;
+}
+
+.score-reviewer {
+    padding-top: 15px;
+    font-size: 40px;
+    font-weight: 300;
+    position: relative;
+}

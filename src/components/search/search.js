@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { MOVIE_API_URL, movieAPIOptions } from "../../api";
 import { AsyncPaginate } from "react-select-async-paginate";
+import "./search.css";
 
-const Search = ({onSearchChange}) => {
+const Search = ({ onSearchChange }) => {
 
     const [search, setSearch] = useState(null);
 
@@ -33,13 +34,15 @@ const Search = ({onSearchChange}) => {
     }
 
     return (
-        <AsyncPaginate
-            placeholder="Search for a Movie"
-            debounceTimeout={200}
-            value={search}
-            onChange={handleOnChange}
-            loadOptions={loadOptions}
-        />
+        <div className="search-container">
+            <AsyncPaginate
+                placeholder="Search for a Movie"
+                debounceTimeout={200}
+                value={search}
+                onChange={handleOnChange}
+                loadOptions={loadOptions}
+            />
+        </div>
     )
 }
 
