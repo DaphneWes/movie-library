@@ -12,9 +12,10 @@ const Search = ({ onSearchChange }) => {
             if (inputValue.length === 0) {
                 inputValue = "A";
             }
+
             const response = await fetch(`${MOVIE_API_URL}title/v2/find?title=${inputValue}&limit=5`, movieAPIOptions);
-            console.log(response);
             const response_1 = await response.json();
+
             return {
                 options: response_1.results.map((movie) => {
                     return {

@@ -7,7 +7,7 @@ const Topbar = () => {
 
     return (
         <div className="container-top-bar">
-            <button onClick={reloadPage} className="title"><i class="fa fa-film"></i>  Movie Database by Daphne</button>
+            <button onClick={reloadPage} className="title"><i className="fa fa-film"></i>  Movie Database by Daphne</button>
         </div>
     )
 }

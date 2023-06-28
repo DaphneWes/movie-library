@@ -1,7 +1,7 @@
 import "./reviews.css"
+
 const ReviewsMovie = ({ data }) => {
     const reviews = data.metacritic.reviews;
-    console.log(reviews);
 
     return (
         <div className="reviews-container">
@@ -10,8 +10,8 @@ const ReviewsMovie = ({ data }) => {
                 <hr></hr>
             </div>
             <div className="review-cards">
-                {reviews.map((review) => (
-                    <div className="full-review">
+                {reviews.map((review, id) => (
+                    <div className="full-review" key={id}>
                         <div className="name-reviewer">
                             {review.reviewer}
                         </div>
@@ -25,7 +25,6 @@ const ReviewsMovie = ({ data }) => {
                 ))
                 }
             </div>
-
         </div>
     )
 }

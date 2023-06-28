@@ -16,7 +16,7 @@ hr {
 
 .full-review {
     text-align: center;
-    margin: 0px 50px;
+    margin: 0 50px;
     padding: 25px;
     border-radius: 8px;
     border-width: 1px;
@@ -31,11 +31,10 @@ hr {
 
 .quote-reviewer {
     font-size: 13px;
+    padding-bottom: 10px;
 }
 
 .score-reviewer {
-    padding-top: 15px;
     font-size: 40px;
     font-weight: 300;
-    position: relative;
 }
