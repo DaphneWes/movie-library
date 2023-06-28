@@ -11,6 +11,7 @@ function App() {
 
   const [detailsMovie, setDetailsMovie] = useState(null);
   const [reviewsMovie, setReviewsMovie] = useState(null);
+  const [sizeTitle, setSizeTitle] = useState("big");
 
   const handleOnSearchChange = (searchData) => {
     console.log(searchData);
@@ -26,6 +27,7 @@ function App() {
 
         setDetailsMovie({ movie: searchData.label, ...detailsResponse });
         setReviewsMovie({ movie: searchData.label, ...reviewsResponse });
+        setSizeTitle("small");
       })
       .catch((err) => console.log(err));
   }
@@ -35,7 +37,7 @@ function App() {
     <div className='container'>
       <Topbar />
       <div className='bottom-container'>
-        {!detailsMovie && <Title />}
+        <Title sizeTitle={sizeTitle} />
         <Search onSearchChange={handleOnSearchChange} />
         {detailsMovie && <DetailsMovie data={detailsMovie} />}
         {reviewsMovie && <ReviewsMovie data={reviewsMovie} />}

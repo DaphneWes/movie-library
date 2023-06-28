@@ -1,8 +1,8 @@
 import "./Title.css"
 
-function Title () {
+function Title (props) {
     return (
-        <div className="title-container">
+        <div className={`title-container ${props.sizeTitle}`}>
             MOVIE DATABASE
         </div>
     )
